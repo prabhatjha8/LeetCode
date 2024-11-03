@@ -16,9 +16,6 @@ class Solution:
             visited = [[-1 for _ in range(n)] for _ in range(m)]
 
             def dfs(source, word, visited):
-                # print("source: ", source)
-                # print("word: ", word)
-                # print("visited: ", visited)
 
                 i, j = source 
 
@@ -30,7 +27,6 @@ class Solution:
 
                 else:
                     visited[i][j] = 1
-                    # print(f"neighbors({source}): ", neighbors(source))
                     for neigh in neighbors(source):
                         r, s = neigh
                         if (visited[r][s] == -1) and (board[r][s] == word[1]):
