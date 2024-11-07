@@ -22,12 +22,3 @@ class Solution(object):
             positionIstoOnes[pos] = posCount
 
         return max(positionIstoOnes.values())
-
-                    
-
-
-
-
-
-
-        
