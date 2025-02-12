@@ -11,12 +11,30 @@ class Solution:
         sumDict = defaultdict(list)
         for num in nums:
             sumDict[digitSum(num)].append(num)
+
+        def topTwoSum(arr):
+            n = len(arr)
+            if n <= 1:
+                return -1
+            else:
+                M = max(arr[1], arr[0])
+                m = min(arr[1], arr[0])
+                for i in range(2, n):
+                    if arr[i] >= M:
+                        m = M
+                        M = arr[i]
+
+                    elif arr[i] > m:
+                        m = arr[i]
+
+                return m + M
+
+
         
         ans = -1
         for sNum in sumDict:
             l = sumDict[sNum]
-            if len(l) > 1:
-                ans = max(ans, l[-1] + l[-2])
+            ans = max(ans, topTwoSum(l))
 
         return ans 
 
