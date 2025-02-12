@@ -1,6 +1,5 @@
 class Solution:
     def maximumSum(self, nums: List[int]) -> int:
-        nums = sorted(nums)
         def digitSum(num):
             numStr = str(num)
             ans = 0
